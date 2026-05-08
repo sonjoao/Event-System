@@ -5,9 +5,11 @@ arquivo = "eventos.csv"
  
 def cadastrar_evento():
 
-    print("\nCadastro de Evento")
+    print("\n==== CADRASTO DO EVENTO ====")
 
-    nome = input("Nome do evento: ")
-    tipo = input("Tipo do evento: ")
-    data = input("Data do evento (dd/mm/aaaa): ")
-    local = input("Local do evento: ")
+    nome = input("Nome do evento: ").strip()
+    tipo = input("Tipo do evento: ").strip()
+    local = input("Local do evento: ").strip()
+ 
+ while true
+   data = input("Data (dd/mm/aaaa): ")
