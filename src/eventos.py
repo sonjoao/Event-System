@@ -10,7 +10,12 @@ def cadastrar_evento():
     nome = input("Nome do evento: ").strip()
     tipo = input("Tipo do evento: ").strip()
     local = input("Local do evento: ").strip()
- 
+    try:
+        orcamento = float(input("Orçamento: R$ "))
+
+    except:
+        print("Valor inválido")
+        return
  while True:
         data = input("Data (dd/mm/aaaa): ")
 
