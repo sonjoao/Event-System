@@ -2,15 +2,17 @@ import csv
 from datetime import datetime
 
 arquivo = "eventos.csv"
- 
+
 def cadastrar_evento():
 
-    print("\n==== CADRASTO DO EVENTO ====")
+    print("\nCadastro de Evento")
 
-    nome = input("Nome do evento: ").strip()
-    tipo = input("Tipo do evento: ").strip()
-    local = input("Local do evento: ").strip()
- with open(arquivo, "a", newline="", encoding="utf-8") as arq:
+    nome = input("Nome: ")
+    tipo = input("Tipo: ")
+    data = input("Data (dd/mm/aaaa): ")
+    local = input("Local: ")
+
+    with open(arquivo, "a", newline="", encoding="utf-8") as arq:
 
         escritor = csv.writer(arq)
 
@@ -30,24 +32,29 @@ def listar_eventos():
     try:
 
         with open(arquivo, "r", encoding="utf-8") as arq:
-         leitor=csv.reader(arq)
 
+            leitor = csv.reader(arq)
 
-         vazio= true
-         for i,linha in enumerate(leitor):
-           vazio=false
-            nome=linha[0]
-            tipo=linha[1]
-            data=linha[2]
-            local=linha[3]
+            vazio = True
 
+            for i, linha in enumerate(leitor):
 
-           try:
-            data_evento=datetime.stirptime(data, "%d/%m/%Y")
-            hoje=datetime.now()
-            dias=(data_evento - hoje).days
+                vazio = False
 
-            except:
+                nome = linha[0]
+                tipo = linha[1]
+                data = linha[2]
+                local = linha[3]
+
+                try:
+
+                    data_evento = datetime.strptime(data, "%d/%m/%Y")
+
+                    hoje = datetime.now()
+
+                    dias = (data_evento - hoje).days
+
+                except ValueError:
                     dias = "erro na data"
 
                 print(f"""
@@ -60,94 +67,96 @@ Local: {local}
 
 Faltam {dias} dias
                 """)
+
             if vazio:
-             print("Nenhum evento cadastrado")
+                print("Nenhum evento cadastrado")
 
-    except: 
+    except FileNotFoundError:
+        print("Arquivo não encontrado")
+
+def editar_evento():
+
+    eventos = []
+
+    try:
+
+        with open(arquivo, "r", encoding="utf-8") as arq:
+
+            leitor = csv.reader(arq)
+
+            for linha in leitor:
+                eventos.append(linha)
+
+    except FileNotFoundError:
         print("Erro ao abrir arquivo")
-     return
-
-     listar_eventos()
-
-      try:
-
-          indice=int(input("Digite o numero do evento")
-                     if indice>= len(eventos):
-                          print("Evento não encontrado")
-                          return
-       except:
-        print("Valor invalido")
         return
 
-print("Nova dados")
-eventos[indice][0] = input("Novo nome: ")
-eventos[indice][1] = input("Novo tipo: ")
-eventos[indice][2] = input("Nova data: ")
-eventos[indice][3] = input("Novo local: ")
+    listar_eventos()
 
-with open(arquivo,"w", newline="", encoding="utf-8") as arq:
-   escritor=csv.writter(arq)
-    escritor.writenows(eventos)
-  print("\nEvento atualizado")
+    try:
 
+        indice = int(input("\nDigite o número do evento: "))
+
+        if indice < 0 or indice >= len(eventos):
+            print("Evento não encontrado")
+            return
+
+    except ValueError:
+        print("Valor inválido")
+        return
+
+    print("\nNovos dados")
+
+    eventos[indice][0] = input("Novo nome: ")
+    eventos[indice][1] = input("Novo tipo: ")
+    eventos[indice][2] = input("Nova data: ")
+    eventos[indice][3] = input("Novo local: ")
+
+    with open(arquivo, "w", newline="", encoding="utf-8") as arq:
+
+        escritor = csv.writer(arq)
+
+        escritor.writerows(eventos)
+
+    print("\nEvento atualizado")
 
 def excluir_evento():
 
     eventos = []
 
-     try: 
-      with open(arquivo,"r", encoding="utf-8") as arq:
+    try:
 
-       leitor=csv.reader(arq)
+        with open(arquivo, "r", encoding="utf-8") as arq:
 
-        for linha in leitor:
-         eventos.append(linha)
+            leitor = csv.reader(arq)
 
-      except:
-      print("Erro ao abrir  araquivo")
-       return
+            for linha in leitor:
+                eventos.append(linha)
 
-      listar_eventos()
-
-
-        try:
-         indice=int(input("\n Numero do evento  para excluir:"))
-         if indice >=len(eventos):
-          print("Evento não encontrado")
-          return
-
-
-
-       except:
-        print("Valor invalido")
+    except FileNotFoundError:
+        print("Erro ao abrir arquivo")
         return
 
+    listar_eventos()
 
-       eventos.pop(indice)
-with open(arquivo, "w", newline="", encoding="utf=8") as arq
+    try:
 
-   escritor= csv.writter(arq)
+        indice = int(input("\nNúmero do evento para excluir: "))
 
-    escritor.writerows(eventos)
-   print("Evento removido")
+        if indice < 0 or indice >= len(eventos):
+            print("Evento não encontrado")
+            return
 
+    except ValueError:
+        print("Valor inválido")
+        return
 
+    eventos.pop(indice)
 
+    with open(arquivo, "w", newline="", encoding="utf-8") as arq:
 
+        escritor = csv.writer(arq)
 
+        escritor.writerows(eventos)
 
-           
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
+    print("\nEvento removido")
