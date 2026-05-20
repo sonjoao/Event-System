@@ -40,7 +40,7 @@ def orçamento():
         else:
             print("Orçamento dentro do limite.") 
             
-    #Captura erros de conversão, Letras no lugar de números
+    #Captura erros de conversão (Letras no lugar de números)
     except ValueError:
         print(" Erro: Digite apenas números para valores e IDs.")
     except Exception as e:
