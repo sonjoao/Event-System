@@ -118,6 +118,21 @@ def excluir_evento():
 
 
 
+       except:
+        print("Valor invalido")
+        return
+
+
+       eventos.pop(indice)
+with open(arquivo, "w", newline="", encoding="utf=8") as arq
+
+   escritor= csv.writter(arq)
+
+    escritor.writerows(eventos)
+   print("Evento removido")
+
+
+
 
 
 
