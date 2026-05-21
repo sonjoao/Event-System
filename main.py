@@ -37,7 +37,43 @@ def menu_tarefas():
      print("4 - Marcar tarefa como conclúida")
      print("5 - Excluir tarefa")
      print("0 - Voltar")
-     
+
+def menu_principal():
+  while True:
+         print("\n=============================")
+         print(" SISTEMAS DE ORGANIZAÇÃO DE EVENTOS")
+         print("\n=============================")
+         print("1 - Eventos")
+         print("2 - Tarefas")
+         print("3 - Controle de orçamentos")
+         print("4 - Contagem regressiva")
+         print("5 - Susgestões personalizada")
+         print("0 - Sair")
+
+         opcao = input("Escolha uma opcão: ")
+              if opcao == "1":
+                menu_eventos()
+              elif opcao == "2":
+                menu_tarefas()
+              elif opcao == "3":
+                mostra_orcamento()
+              elif opcao == "4":
+                mostra_contagem_regressiva()
+              elif opcao == "5":
+                exluir_tarefa()
+              elif opcao == "0":
+                 break
+              else:
+                 print("Opção inválida. Tente novamente.")
+
+      
+                
+              
+              
+
+         
+        
+    
   
     
     
