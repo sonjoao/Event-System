@@ -11,3 +11,32 @@ def menu():
     print("3 - Orçamentos")
     print("4 - Sugestões")
     print("0 - Sair")
+
+    opcao = input("\nEscolha uma opção: ")
+
+    if opcao == "1":
+        print("\nAbrindo eventos...")
+        menu_eventos()
+    elif opcao == "2"
+        print("\nAbrindo tarefas...")
+        menu_tarefas()
+    elif opcao == "3"
+        print("\nAbrindo orçamentos...")
+        menu_orcamentos()
+    elif opcao == "4"
+        print("\nAbrindo susgestões...")
+        menu_susgestoes()
+    elif opcao == "0"
+        print("\nSistema encerrado.")
+        break
+    
+    else:
+      print("\nOpção inválida!")
+
+menu()
+  
+    
+    
+    
+
+
