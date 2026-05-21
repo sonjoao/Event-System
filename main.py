@@ -7,8 +7,24 @@ def menu_eventos
   while True:
     print("\n ========= MENU DE EVENTOS =========)
     print("1 - Cadastrar evento")
+    print("2 - Listar evento")
+    print("3 - Editar evento")
+    print("4 - Excluir evento")
+    print("0" - Voltar")
 
-    
+    opcao = input("Escolha uma opção: ")
+         
+      if opcao == "1":
+         criar_eventos()
+      elif opcao == "2":
+         listar_eventos()
+      elif opcao == "3":
+         editar_eventos()
+      elif opcao == "4":
+         excluir_evento()
+      elif opcao == "0":
+         break
+          
     else:
       print("\nOpção inválida! Tente novamente.")
 
