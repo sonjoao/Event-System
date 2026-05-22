@@ -17,3 +17,15 @@ def criar_tarefa():
     return
 id_tarefa = gerar_id_tarefa()
 nome_tarefa = input("Nome da tarefa: ")
+
+while True: # Custo precisa ser obrigatoriamente numeros
+  try:
+    custo = float(input("Custo da tarefa: R$ "))
+    break
+  except ValueError:
+    print("Digite apenas números no custo.")
+status = "pendente" # marca todas as tarefas como pendente 
+
+linha = f"{id_tarefa};{id_evento};{nome_tarefa};{custo};{status}" #salva todos na lista
+
+print("\nTarefa Cadastrada com Sucesso!")
