@@ -70,7 +70,7 @@ def menu_principal():
               while True:
                   print("\n=================================")
                   print("SISTEMA DE ORGANIZAÇÃO DE EVENTOS")
-                  print("===================================")
+                  print("\n=================================")
                   print("1 - Eventos")
                   print("2 - Tarefas")
                   print("3 - Controle de orçamento")
