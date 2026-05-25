@@ -66,6 +66,18 @@ def menu_principal():
               else:
                  print("Opção inválida. Tente novamente.")
 
+  def menu_principal():
+              while True:
+                  print("\n=================================")
+                  print("SISTEMA DE ORGANIZAÇÃO DE EVENTOS")
+                  print("===================================")
+                  print("1 - Eventos")
+                  print("2 - Tarefas")
+                  print("3 - Controle de orçamento")
+                  print("4 - Contagem regressiva")
+                  print("5 - Sugestões personalizadas")
+                  print("0 - Sair")
+
       
                 
               
