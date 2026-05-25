@@ -29,3 +29,14 @@ status = "pendente" # marca todas as tarefas como pendente
 linha = f"{id_tarefa};{id_evento};{nome_tarefa};{custo};{status}" #salva todos na lista
 
 print("\nTarefa Cadastrada com Sucesso!")
+
+def listar_tarefas():
+  print("\n Lista de Tarefas")
+  tarefas = ler_arquivo(arquivo_tarefas)
+  if len(tarefas) == 0:
+    print("Nenhuma Tarefa cadastrada ainda")
+    return
+  for tarefa in tarefas:
+    dados = tarefa.split(";")
+    print("-" * 40) # tecnica para replicar qualquer tipo de texto sem precisar printar varias vezes 
+    print(f"ID da tarefa: {dados[0]}")
