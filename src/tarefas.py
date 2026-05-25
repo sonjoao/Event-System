@@ -40,3 +40,7 @@ def listar_tarefas():
     dados = tarefa.split(";")
     print("-" * 40) # tecnica para replicar qualquer tipo de texto sem precisar printar varias vezes 
     print(f"ID da tarefa: {dados[0]}")
+    print(f"ID da Evento: {dados[1]}")
+    print(f"Tarefa: {dados[2]}")
+    print(f"Custo em R$: {(dados[3]):.2f}")
+    print(f"Status: {dados[4]}")
