@@ -44,3 +44,18 @@ def listar_tarefas():
     print(f"Tarefa: {dados[2]}")
     print(f"Custo em R$: {(dados[3]):.2f}")
     print(f"Status: {dados[4]}")
+
+def listar_tarefas_por_evento(id_evento): # lista apenas as tarefas de um evento especifico, por isso a variavel se chama assim
+  tarefas = ler_arquivo(arquivo_tarefas)
+  encontrou = False 
+  print("\nTarefas do Evento")
+  for tarefa in tarefas:
+    dados = tarefa.split(";") # dividindo em substrings retornando dentro da lista 
+    if dados[1] == str(id_evento):
+      encontrou = True
+      print(f"Id da tarefa: {dados[0]}")
+      print(f"Tarefa: {dados[2]}")
+      print(f"Custo em R$: {float(dados[3]):.2f}")
+      print(f"Status: {dados[4]}")
+  if not encontrou:
+    print("Esse evento ainda não possui Tarefas.")
