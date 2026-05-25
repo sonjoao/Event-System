@@ -59,3 +59,23 @@ def listar_tarefas_por_evento(id_evento): # lista apenas as tarefas de um evento
       print(f"Status: {dados[4]}")
   if not encontrou:
     print("Esse evento ainda não possui Tarefas.")
+
+def concluir_tarefas():
+  print("\nConcluir Tarefa")
+  listar_tarefas()
+  id_concluir = input("\nDigite o ID da Tarefa Concluída: ")
+  tarefas = ler_arquivo(arquivo_tarefas)
+  novas_tarefas = []
+  encontrado = False
+  for tarefa in tarefas:
+    dados = tarefa.split(";")
+    if dados[0] == id_concluir:
+      encontrado = True # Isso mantem os dados alterando apenas o status
+      tarefa_atualizada = f"{dados[0]};{dados[1]};{dados[2]};{dados[3]};concluída"
+      novas_tarefas.append(tarefa_atualizada)
+    else:novas_tarefas.append(tarefa)
+  salvar_arquivo(arquivo_tarefas, novas_tarefas)
+  if encontrado:
+    print("\nTarefa marcada como Concluída!")
+  else:
+    print("\nTarefa Não Encontrada ou Não concluída!")
