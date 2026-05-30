@@ -1,5 +1,5 @@
 from src.auth import tela_inicial
-
+# primeiro, importei as outras parte do src, feita pela equipe
 from src.eventos import (
   criar_evento
   listar_eventos
