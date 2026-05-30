@@ -52,7 +52,33 @@ while True:
   print("[4] Excluir evento")
   print("[0] Voltar")
 
+  opcao = input("\nEscolha uma opção: ")
+
+  if opcao == "0"
+    break
   
+  if opcao in opcoes:
+    limpar_tela()
+    opcoes[opcao]()
+    pausar()
+  else:
+      print("Opção inválida")
+      pausar()
+
+  def menu_tarefas
+    while True:
+      limpar_tela()
+      titulo("MENU DE TAREFAS")
+      
+      print("\n[1] Cadastrar tarefa")
+      print("[2] Listar tarefas")
+      print("[3] Editar tarefas")
+      print("[4] Concluir tarefa")
+      print("[5] Excluir tarefa")
+      print("[0] Voltar")
+      
+          
+    
 
 
 
