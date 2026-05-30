@@ -5,7 +5,7 @@ from src.sugestoes import mostrar_contagem_regressiva, mostrar_sugestoes
 
 def menu_eventos
   while True:
-    print("\n ========= MENU DE EVENTOS =========)
+    print("\n MENU DE EVENTOS )
     print("1 - Cadastrar evento")
     print("2 - Listar evento")
     print("3 - Editar evento")
