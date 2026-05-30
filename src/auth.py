@@ -24,4 +24,10 @@ def cadastrar():
         "usuario": usuario
         "senha": senha
     })
+
     salvar_usuarios(usuarios)
+
+    print(\nCadastro realizado com sucesso!)
+    
+def login()
+
