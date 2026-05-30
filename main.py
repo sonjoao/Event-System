@@ -18,4 +18,24 @@ from src.tarefas import (
 from src.orcamento import mostrar_orcamento
 from src.susgestoes import mostrar_contagem_regressiva, mostrar_sugestoes
 
+import os
+
+def limpar_tela():
+  os.system("cls")
+  
+def linha()
+  print("_" * 60)
+  # usei esse def para criar uma função, quando der o printe vai ficar entre linhas, para ficar mais bonito
+def titulo(texto):
+  linha()
+  print(texto.center(60))
+  linha(60)
+
+def pausar():
+  input("\nPressione ENTER para continuar...")
+  
+
+
+
+
   
