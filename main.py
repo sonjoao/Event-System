@@ -25,7 +25,7 @@ def limpar_tela():
   
 def linha()
   print("_" * 60)
-  # usei esse def para criar uma função, quando der o printe vai ficar entre linhas, para ficar mais bonito
+  # usei esse def para criar uma função, quando der o print vai ficar entre linhas, para ficar mais bonito
 def titulo(texto):
   linha()
   print(texto.center(60))
