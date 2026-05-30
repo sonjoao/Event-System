@@ -76,6 +76,34 @@ while True:
       print("[4] Concluir tarefa")
       print("[5] Excluir tarefa")
       print("[0] Voltar")
+
+      opcao = input("\nEscolha uma opção: ")
+
+      if opcao == "1":
+          criar_tarefa()
+
+      elif opcao == "2":
+         listar_tarefas()
+
+      elif opcao == "3":
+          id_evento = input("ID do evento: ")
+          listar_tarefas_por_evento(id_evento)
+
+      elif opcao == "4"
+          concluir_tarefa()
+
+      elif opcao == "5"
+          excluir_tarefas()
+
+      elif opcao == "0":
+          break
+      else:
+          print("Opção inválida")
+
+      pausar()
+  
+          
+
       
           
     
