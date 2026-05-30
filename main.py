@@ -33,7 +33,15 @@ def titulo(texto):
 
 def pausar():
   input("\nPressione ENTER para continuar...")
-  
+
+def menu_eventos():
+  opcoes = {
+    "1" : criar_eventos,
+    "2" : istar_eventos,
+    "3" : editar_evento,
+    "4" : excluir_evento
+  }
+
 
 
 
