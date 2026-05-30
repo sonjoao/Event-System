@@ -42,6 +42,18 @@ def menu_eventos():
     "4" : excluir_evento
   }
 
+while True:
+  limpar_tela()
+  titulo("MENU DE EVENTOS")
+
+  print("\n[1] Cadastrar evento")
+  print("[2] Listar eventos")
+  print("[3] Editar evento")
+  print("[4] Excluir evento")
+  print("[0] Voltar")
+
+  
+
 
 
 
