@@ -101,6 +101,18 @@ while True:
           print("Opção inválida")
 
       pausar()
+
+def menu_principal():
+  while True:
+     limpar_tela()
+
+     titulo("ORGANIZAÇÃO DE EVENTOS")
+
+      print("\n[1] Eventos")
+      print("[2] Tarefas")
+      print("[3] Controle de orçamento")
+      print("[4] Contagem regressiva")
+      print("[5] Sugestões")
   
           
 
