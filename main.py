@@ -113,6 +113,8 @@ def menu_principal():
       print("[3] Controle de orçamento")
       print("[4] Contagem regressiva")
       print("[5] Sugestões")
+      print("[0] Sair")
+
   
           
 
