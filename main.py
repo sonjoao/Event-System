@@ -115,6 +115,19 @@ def menu_principal():
       print("[5] Sugestões")
       print("[0] Sair")
 
+      opcao = input("\nEscolha uma opção: ")
+
+      if opcao == "1":
+          criar_tarefas()
+
+      elif opcao == "2"
+          listar_tarefas()
+
+      elif opcao == "3"
+          id_evento = input("ID do evento: ")
+          listar_tarefas_por_evento(id_evento)
+
+
   
           
 
