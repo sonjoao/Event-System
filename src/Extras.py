@@ -17,12 +17,12 @@ def modo_evento(data_evento):
      )
      return  
     
-    print("\nMODO EVENTO ATIVADO\n")
+print("\nMODO EVENTO ATIVADO\n")
 
-    print("✓ Verificar buffet")
-    print("✓ Verificar decoração")
-    print("✓ Conferir lista de convidados")
-    print("✓ Conferir equipamentos")
+print("✓ Verificar buffet")
+print("✓ Verificar decoração")
+print("✓ Conferir lista de convidados")
+print("✓ Conferir equipamentos")
 
     print("Atenção aos ultimos detalhes!")
  
