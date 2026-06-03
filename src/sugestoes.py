@@ -57,6 +57,17 @@ def mostrar_sugestoes():
     print(f"Evento: {nome}")
     print(f"Data: {data}")
 
+    if "anivers" in tipo:
+       print("- Pense em bolo, decoração, música e lista de convidados.")
+    elif "casamento in tipo:
+         print("- Priorize local, buffet, fotografia e organização dos horários.")
+    elif "formatura in tipo:
+         print("- Foque em convite, roupa, cerimônia e registro de fotos.")
+    else:
+         print("- ORganize local, tarefas principais, custos e responsáveis.")
+    
+     
+
     
     
 
