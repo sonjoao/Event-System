@@ -14,13 +14,18 @@ def modo_evento(data_evento):
 
      print(
            f"\nAinda faltam {dias} dias para o evento."
-        )
+     )
+     return  
+    
     print("\nMODO EVENTO ATIVADO\n")
 
     print("✓ Verificar buffet")
     print("✓ Verificar decoração")
     print("✓ Conferir lista de convidados")
     print("✓ Conferir equipamentos")
+
+    print("Atenção aos ultimos detalhes!")
+
 
   
   
