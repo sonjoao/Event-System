@@ -51,6 +51,16 @@ def mostrar_sugestoes():
     convidados = int(dados[6])
     total_gasto = calcular_gastos_evento(id_evento)
     saldo = orcamento - total_gasto
+
+    print("\nSugestões para o evento")
+    print("-" * 40)
+    print(f"Evento: {nome}")
+    print(f"Data: {data}")
+
+    
+    
+
+   
     
     
 
