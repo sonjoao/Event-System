@@ -73,6 +73,14 @@ def mostrar_sugestoes():
         print("- O saldo está baixo. Evite criar novas tarefas caras.")
     else:
         print("- O orçamento ainda está controlado. Continue acompanhando os gastos.")
+
+    if convidados >= 100:
+        print("- Como tem muitos convidados, confirme presença com antecedência.")
+    elif convidados >= 30:
+        print("- A quantidade de convidados é média. Uma lista organizada já ajuda muito.")
+    else:
+        print("- Como o evento é menor, dá para focar mais nos detalhes e economizar.")
+
     
      
 
