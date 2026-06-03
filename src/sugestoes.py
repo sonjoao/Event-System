@@ -29,6 +29,35 @@ def mostar_contagem_regressiva():
           print("O seu evento é hoje!!)
       else:
           print("Esse evento já passou.")
+
+def mostrar_sugestoes():
+    print("\n=== Sugestões Personalizadas ==="
+
+    listar_eventos()
+
+    id_evento = input("\nDigite o ID do evento: ")
+    evento = buscar_evento_por_id(id_evento)
+
+    if: evento is None:
+         print("Evento não encontrado.")
+         return
+
+    dados = evento.split(";)
+
+    nome = dados[1]
+    tipo = dados[2].lower()
+    data = dados[3]
+    orcamento = float(dados[5])
+    convidados = int(dados[6])
+    total_gasto = calcular_gastos_evento(id_evento)
+    saldo = orcamento - total_gasto
+    
+    
+
+
+    
+
+    
       
 
       
