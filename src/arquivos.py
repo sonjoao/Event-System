@@ -1,10 +1,10 @@
 def ler_arquivo(caminho):
   linhas = []
 
-try:
-  with open(caminho, "r", encondig="utf-8") as arquivo:
-    for linha in arquivo:
-        linha = linha.strip()
+  try:
+    with open(caminho, "r", encondig="utf-8") as arquivo:
+      for linha in arquivo:
+          linha = linha.strip()
 
         if linha != "":
          linhas.append(linha)
