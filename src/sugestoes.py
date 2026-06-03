@@ -22,6 +22,13 @@ def mostar_contagem_regressiva():
       dias_restantes = (data_eventos - hoje).days
 
       print(f"\nEventos: {dados[1]}")
+
+      if dias_restantes > 0 :
+          print("f"Faltam {dias_restantes} dias para o evento.")
+      elif dias_restantes == 0:
+          print("O seu evento é hoje!!)
+      else:
+          print("Esse evento já passou.")
       
 
       
