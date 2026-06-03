@@ -79,3 +79,26 @@ def concluir_tarefas():
     print("\nTarefa marcada como Concluída!")
   else:
     print("\nTarefa Não Encontrada ou Não concluída!")
+
+def excluir_tarefa(): #Def para excluir tarefas e adc numa variavel excluir
+  print("\nExcluir Tarefa")
+  listar_tarefas()
+  id_excluir = input("\nDigite o id da tarefa que deseja exluir: ")
+
+tarefas = ler_arquivo(arquivo_tarefas)
+novas_tarefas = []
+encontrado = False 
+  for tarefa in tarefas:
+    dados = tarefa.split(";")
+    if dados[0] == id_excluir:
+      encontrado = True
+    else:
+      novas_tarefas.append(tarefa)
+  salvar_arquivo(arquivo_tarefas, novas_tarefas)
+
+if encontrado:
+  print("\nTarefa excluída com Sucesso!") # Saída de dados se a tarefa for exlcuída
+else:
+  print("\n Tarefa não encontrada.") # Saída de dados se a tarefa não for encontrada 
+
+    
