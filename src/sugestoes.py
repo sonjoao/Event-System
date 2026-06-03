@@ -21,6 +21,11 @@ def mostar_contagem_regressiva():
       hoje = datetime.now()
       dias_restantes = (data_eventos - hoje).days
 
+      print(f"\nEventos: {dados[1]}")
+      
+
+      
+
       
 
 
