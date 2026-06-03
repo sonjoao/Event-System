@@ -65,6 +65,14 @@ def mostrar_sugestoes():
          print("- Foque em convite, roupa, cerimônia e registro de fotos.")
     else:
          print("- ORganize local, tarefas principais, custos e responsáveis.")
+         
+
+    if saldo < 0:
+        print("- O orçamento já estourou. Reveja custos ou corte tarefas menos importantes.")
+    elif saldo < orcamento * 0.2:
+        print("- O saldo está baixo. Evite criar novas tarefas caras.")
+    else:
+        print("- O orçamento ainda está controlado. Continue acompanhando os gastos.")
     
      
 
