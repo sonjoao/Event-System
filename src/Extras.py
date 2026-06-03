@@ -7,5 +7,21 @@ def verificar_dia_evento(data_evento):
   )
   dias=(data-hoje).days
   return dias
+def modo_evento(data_evento):
+  dias=verificar_dia_evento(data_evento)
+
+  if dias >1:
+
+     print(
+           f"\nAinda faltam {dias} dias para o evento."
+        )
+    print("\nMODO EVENTO ATIVADO\n")
+
+    print("✓ Verificar buffet")
+    print("✓ Verificar decoração")
+    print("✓ Conferir lista de convidados")
+    print("✓ Conferir equipamentos")
+
+  
   
   
