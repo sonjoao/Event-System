@@ -127,6 +127,67 @@ def menu_principal():
           id_evento = input("ID do evento: ")
           listar_tarefas_por_evento(id_evento)
 
+      elif opçao == "4":
+           concluir_tarefa()
+
+      elif opcao == "5":
+           excluir_tarefas()
+
+      elif opcao == "0":
+            break
+      else:
+          print("Opção Inválida")
+      pausar()
+
+def menu_principal():
+    while True:
+        limpar_tela()
+
+        titulo("SISTEMA DE ORGANIZAÇÃO DE EVENTOS")
+
+        print("\n[1] Eventos")
+        print("[2] Tarefas")
+        print("[3] Controle de orçamento")
+        print("[4] Contagem regressiva")
+        print("[5] Sugestões")
+        print("[0] Sair")
+
+        opcao = input("\nEscolha uma opção: ")
+
+        if opcao == "1":
+            menu_eventos()
+
+        elif opcao == "2":
+            menu_tarefas()
+
+        elif opcao == "3":
+            mostrar_orcamento()
+            pausar()
+
+        elif opcao == "4":
+            mostrar_contagem_regressiva()
+            pausar()
+
+        elif opcao == "5":
+            mostrar_sugestoes()
+            pausar()
+
+        elif opcao == "0":
+            print("\nEncerrando sistema...")
+            break
+
+        else:
+            print("Opção inválida.")
+            pausar()
+
+
+if __name__ == "__main__":
+    if tela_inicial():
+        menu_principal()
+
+
+ 
+ 
 
   
           
