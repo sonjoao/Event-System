@@ -25,7 +25,7 @@ def modo_evento(data_evento):
     print("✓ Conferir equipamentos")
 
     print("Atenção aos ultimos detalhes!")
-
+ 
 
   
   
