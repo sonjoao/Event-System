@@ -22,7 +22,7 @@ def salvar_usuarios(usuarios):
     with open(ARQUIVO, "w") as arquivo:
         json.dump(usuarios, arquivo, indent=4)
 
-def cadastrar():
+def cadastrar():  # função para cadastrar um novo usuário, onde o usuário digita um nome de usuário e senha, e essas informações são salvas em um arquivo JSON para serem usadas posteriormente no login
     usuarios = carregar_usuarios()
 
     titulo("CADASTRO")
@@ -39,7 +39,7 @@ def cadastrar():
 
     print("\nCadastro realizado com sucesso!")
 
-def login():
+def login():  # função para fazer login, onde o usuário digita seu nome de usuário e senha, e o sistema verifica se as credenciais estão corretas, permitindo ou negando o acesso ao sistema de eventos
     usuarios = carregar_usuarios()
 
     titulo("LOGIN")
@@ -47,7 +47,9 @@ def login():
     usuario = input("Usuário: ")
     senha = input("Senha: ")
 
-    for u in usuarios:
+    for u in usuarios: # usamos u para percorrer a lista de usuários, verificando se o usuário e senha correspondem a algum cadastro existente
+
+
         if u["usuario"] == usuario and u["senha"] == senha:
             print("\nLogin realizado com sucesso!")
             return True
