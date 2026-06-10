@@ -2,7 +2,7 @@ import json
 
 ARQUIVO = "dados/usuarios.json"
 
-# mesmo esquema de função de texto, para deixar tudo padrão
+
 def linha():
     print("=" * 60)
     
@@ -13,16 +13,16 @@ def titulo(texto):
 
 def carregar_usuarios():
     try:
-        with open(ARQUIVO, "r") as arquivo:
+        with open(ARQUIVO, "r") as arquivo: # "r" (Read): Modo de leitura estrita. Apenas lê os dados existentes.
             return json.load(arquivo)
     except:
         return []
-        
+  
 def salvar_usuarios(usuarios):
-    with open(ARQUIVO, "w") as arquivo:
+    with open(ARQUIVO, "w") as arquivo: # "w" (Write): Modo de escrita destrutiva. Limpa o arquivo e sobrescreve do zero.
         json.dump(usuarios, arquivo, indent=4)
 
-def cadastrar():  # função para cadastrar um novo usuário, onde o usuário digita um nome de usuário e senha, e essas informações são salvas em um arquivo JSON para serem usadas posteriormente no login
+def cadastrar():  
     usuarios = carregar_usuarios()
 
     titulo("CADASTRO")
@@ -39,7 +39,7 @@ def cadastrar():  # função para cadastrar um novo usuário, onde o usuário di
 
     print("\nCadastro realizado com sucesso!")
 
-def login():  # função para fazer login, onde o usuário digita seu nome de usuário e senha, e o sistema verifica se as credenciais estão corretas, permitindo ou negando o acesso ao sistema de eventos
+def login():  
     usuarios = carregar_usuarios()
 
     titulo("LOGIN")
@@ -47,8 +47,7 @@ def login():  # função para fazer login, onde o usuário digita seu nome de us
     usuario = input("Usuário: ")
     senha = input("Senha: ")
 
-    for u in usuarios: # usamos u para percorrer a lista de usuários, verificando se o usuário e senha correspondem a algum cadastro existente
-
+    for u in usuarios:
 
         if u["usuario"] == usuario and u["senha"] == senha:
             print("\nLogin realizado com sucesso!")
@@ -58,11 +57,16 @@ def login():  # função para fazer login, onde o usuário digita seu nome de us
     return False
 
 def tela_inicial():
-    titulo("SISTEMA DE EVENTOS")
+   while True:
+        titulo("SISTEMA DE EVENTOS")
+        resposta = input("Possui cadastro? (s/n): ").lower().strip()
 
-    resposta = input("Possui cadastro? (s/n): ").lower()
-
-    if resposta == "n":
-        cadastrar()
-
-    return login()
+        if resposta == "n":
+            cadastrar()
+            return login()
+        elif resposta == "s":
+            return login()  
+        else:
+            print("\nOpção inválida! Digite apenas 's' para sim ou 'n' para não.")
+            input("\nPressione ENTER para tentar novamente...")
+            os.system("cls") 
