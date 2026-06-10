@@ -10,13 +10,11 @@ def calcular_gastos_evento(id_evento):
     
     tarefas = ler_arquivo(ARQUIVO_TAREFAS)
 
-    # Essa variável começa em zero e vai acumulando os custos.
     total_gasto = 0
 
     for tarefa in tarefas:
         dados = tarefa.split(";")
 
-       
         if dados[1] == str(id_evento):
             total_gasto += float(dados[3])
 
@@ -37,13 +35,12 @@ def mostrar_orcamento():
 
     dados = evento.split(";")
 
-    
-    orcamento = float(dados[5])
+    # índices: 0=id, 1=nome, 2=tipo, 3=data, 4=horario, 5=local, 6=orcamento, 7=convidados
+    orcamento = float(dados[6])
 
     
     total_gasto = calcular_gastos_evento(id_evento)
 
-    
     saldo = orcamento - total_gasto
 
     print("\nResumo do orçamento")
@@ -53,7 +50,6 @@ def mostrar_orcamento():
     print(f"Total gasto em tarefas: R$ {total_gasto:.2f}")
     print(f"Saldo restante: R$ {saldo:.2f}")
 
-    
     if saldo < 0:
         print("Atenção: o evento passou do orçamento.")
     elif saldo == 0:
