@@ -18,13 +18,13 @@ from src.tarefas import ( #importei as funções de tarefas
 from src.orcamento import mostrar_orcamento #importei a função de orçamento 
 from src.sugestoes import mostrar_contagem_regressiva, mostrar_sugestoes #importei as funções de sugestões 
 
-import os #importei o módulo os para usar a função de limpar a tela
+import os
 
 
 def limpar_tela():
     os.system("cls")
 
-# bom, essa função def linha  60 caracteres foi usada para organizar a tela, deixando mais estetica assi: ____________________________ de forma automatica
+
 def linha():      
     print("_" * 60)
 
@@ -71,7 +71,7 @@ def menu_eventos():     #função para mostrar o menu de eventos, onde o usuári
             pausar()
 
 
-def menu_tarefas(): #função para mostrar o menu de tarefas, onde o usuário pode escolher entre criar, listar, listar por evento, concluir ou excluir tarefas
+def menu_tarefas(): 
     while True:
         limpar_tela()
         titulo("MENU DE TAREFAS")
@@ -83,7 +83,7 @@ def menu_tarefas(): #função para mostrar o menu de tarefas, onde o usuário po
         print("[5] Excluir tarefa")
         print("[0] Voltar")
 
-        opcao = input("\nEscolha uma opção: ") # if, elif e else para escolher a opção do menu de tarefas, chamando a função correspondente ou voltando para o menu principal
+        opcao = input("\nEscolha uma opção: ") 
 
         if opcao == "1":
             criar_tarefa()
@@ -110,9 +110,9 @@ def menu_tarefas(): #função para mostrar o menu de tarefas, onde o usuário po
         pausar()
 
 
-def menu_principal(): #função para mostrar o menu principal, onde o usuário pode escolher entre eventos, tarefas, orçamento, contagem regressiva ou sugestões
+def menu_principal(): 
     while True:
-        limpar_tela() #limpa a tela para mostrar o menu principal de forma mais limpa
+        limpar_tela() 
 
         titulo("SISTEMA DE ORGANIZAÇÃO DE EVENTOS")
 
@@ -151,7 +151,7 @@ def menu_principal(): #função para mostrar o menu principal, onde o usuário p
             print("Opção inválida.")
             pausar()
 
- 
-if __name__ == "__main__": #essa parte é a que roda o sistema, primeiro chama a tela de login e depois mostra o menu principal se o login tiver ok
+
+if __name__ == "__main__": # Inicialização do sistema: valida o acesso do usuário antes de abrir o menu principal
     if tela_inicial():
        menu_principal()
