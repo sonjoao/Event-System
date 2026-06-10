@@ -1,13 +1,13 @@
 from src.auth import tela_inicial
 
-from src.eventos import ( #importei as funções de eventos  para usar no menu
+from src.eventos import (
     criar_evento,
     listar_eventos,
     editar_evento,
     excluir_evento
 )
 
-from src.tarefas import ( #importei as funções de tarefas  
+from src.tarefas import (
     criar_tarefa,
     listar_tarefas,
     listar_tarefas_por_evento,
@@ -15,8 +15,8 @@ from src.tarefas import ( #importei as funções de tarefas
     excluir_tarefa
 )
 
-from src.orcamento import mostrar_orcamento #importei a função de orçamento 
-from src.sugestoes import mostrar_contagem_regressiva, mostrar_sugestoes #importei as funções de sugestões 
+from src.orcamento import mostrar_orcamento
+from src.sugestoes import mostrar_contagem_regressiva, mostrar_sugestoes
 
 import os
 
@@ -25,7 +25,7 @@ def limpar_tela():
     os.system("cls")
 
 
-def linha():      
+def linha():
     print("_" * 60)
 
 
@@ -36,10 +36,10 @@ def titulo(texto):
 
 
 def pausar():
-    input("\nPressione ENTER para continuar...") #função simples para pausar a tela e esperar o usuário pressionar enter
+    input("\nPressione ENTER para continuar...")
 
 
-def menu_eventos():     #função para mostrar o menu de eventos, onde o usuário pode escolher entre criar, listar, editar ou excluir eventos
+def menu_eventos():
     opcoes = {
         "1": criar_evento,
         "2": listar_eventos,
@@ -47,7 +47,7 @@ def menu_eventos():     #função para mostrar o menu de eventos, onde o usuári
         "4": excluir_evento
     }
 
-    while True:  #loop para mostrar o menu de eventos até o usuário escolher voltar
+    while True:
         limpar_tela()
         titulo("MENU DE EVENTOS")
 
@@ -71,7 +71,7 @@ def menu_eventos():     #função para mostrar o menu de eventos, onde o usuári
             pausar()
 
 
-def menu_tarefas(): 
+def menu_tarefas():
     while True:
         limpar_tela()
         titulo("MENU DE TAREFAS")
@@ -83,7 +83,7 @@ def menu_tarefas():
         print("[5] Excluir tarefa")
         print("[0] Voltar")
 
-        opcao = input("\nEscolha uma opção: ") 
+        opcao = input("\nEscolha uma opção: ")
 
         if opcao == "1":
             criar_tarefa()
@@ -110,9 +110,9 @@ def menu_tarefas():
         pausar()
 
 
-def menu_principal(): 
+def menu_principal():
     while True:
-        limpar_tela() 
+        limpar_tela()
 
         titulo("SISTEMA DE ORGANIZAÇÃO DE EVENTOS")
 
@@ -152,6 +152,6 @@ def menu_principal():
             pausar()
 
 
-if __name__ == "__main__": # Inicialização do sistema: valida o acesso do usuário antes de abrir o menu principal
+if __name__ == "__main__":
     if tela_inicial():
-       menu_principal()
+        menu_principal()
