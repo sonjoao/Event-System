@@ -5,24 +5,28 @@ ARQUIVO = "dados/usuarios.json"
 
 def linha():
     print("=" * 60)
-    
+
+
 def titulo(texto):
     linha()
     print(texto.center(60))
     linha()
 
+
 def carregar_usuarios():
     try:
-        with open(ARQUIVO, "r") as arquivo: # "r" (Read): Modo de leitura estrita. Apenas lê os dados existentes.
+        with open(ARQUIVO, "r") as arquivo:
             return json.load(arquivo)
     except:
         return []
-  
+
+
 def salvar_usuarios(usuarios):
-    with open(ARQUIVO, "w") as arquivo: # "w" (Write): Modo de escrita destrutiva. Limpa o arquivo e sobrescreve do zero.
+    with open(ARQUIVO, "w") as arquivo:
         json.dump(usuarios, arquivo, indent=4)
 
-def cadastrar():  
+
+def cadastrar():
     usuarios = carregar_usuarios()
 
     titulo("CADASTRO")
@@ -39,7 +43,8 @@ def cadastrar():
 
     print("\nCadastro realizado com sucesso!")
 
-def login():  
+
+def login():
     usuarios = carregar_usuarios()
 
     titulo("LOGIN")
@@ -48,7 +53,6 @@ def login():
     senha = input("Senha: ")
 
     for u in usuarios:
-
         if u["usuario"] == usuario and u["senha"] == senha:
             print("\nLogin realizado com sucesso!")
             return True
@@ -56,17 +60,22 @@ def login():
     print("\nUsuário ou senha incorretos!")
     return False
 
-def tela_inicial():
-   while True:
-        titulo("SISTEMA DE EVENTOS")
-        resposta = input("Possui cadastro? (s/n): ").lower().strip()
 
-        if resposta == "n":
-            cadastrar()
-            return login()
-        elif resposta == "s":
-            return login()  
-        else:
-            print("\nOpção inválida! Digite apenas 's' para sim ou 'n' para não.")
-            input("\nPressione ENTER para tentar novamente...")
-            os.system("cls") 
+def tela_inicial():
+    while True:
+      titulo("SISTEMA DE EVENTOS")
+
+      resposta = input("Possui cadastro? (s/n): ").lower()
+
+      if resposta == "n":
+          cadastrar()
+          return login()
+      elif resposta == "s":
+          return login()
+      else:
+          print("Resposta inválida. Digite 's' para sim ou 'n' para não.")
+    pausar()
+    
+     
+
+      
